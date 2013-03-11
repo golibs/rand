@@ -17,7 +17,7 @@ func Read(xs []byte) {
 	if n != length || err != nil {
 		for length > 0 {
 			length--
-			xs[length] = byte(mrand.Int31n(256))
+			xs[length] = byte(mr.Int31n(256))
 		}
 	}
 }
