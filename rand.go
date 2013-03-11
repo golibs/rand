@@ -15,7 +15,6 @@ func Read(xs []byte) {
 	length := len(xs)
 	n, err := crand.Read(xs)
 	if n != length || err != nil {
-
 		for length > 0 {
 			length--
 			xs[length] = byte(mrand.Int31n(256))
