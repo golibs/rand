@@ -8,7 +8,7 @@ import (
 	"time"
 )
 
-var mr = mrand.New(mrand.NewSource(time.Now().Unix()))
+var gMathRand = mrand.New(mrand.NewSource(time.Now().Unix()))
 
 // Read fills the slice with random bytes
 func Read(xs []byte) {
@@ -17,7 +17,7 @@ func Read(xs []byte) {
 	if n != length || err != nil {
 		for length > 0 {
 			length--
-			xs[length] = byte(mr.Int31n(256))
+			xs[length] = byte(gMathRand.Int31n(256))
 		}
 	}
 }
